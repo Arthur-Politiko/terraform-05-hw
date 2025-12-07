@@ -295,3 +295,14 @@ git checkout -b terraform-hotfix
 git push -u origin terraform-hotfix
 ```
 
+Проверяем `tflint` и `checkov`, мы уже это делали в задании 1.
+
+Вносим необходимые изменения в проект, в основном это неиспользуемые переменные.
+
+Демаем commit и push.
+
+```bash
+git add .
+git commit -m "fix: исправление ошибок tflint и checkov"
+git push
+```
