@@ -287,7 +287,11 @@ source ./cloud-key/s3.key
 
 ### Задание 3
 
-Удаляем все ресурсы:
 ```bash
-terraform destroy -auto-approve
+# Создаём новую ветку terraform-hotfix:
+git checkout -b terraform-hotfix
+
+# Запушиваем её на GitHub
+git push -u origin terraform-hotfix
 ```
+
