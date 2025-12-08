@@ -285,9 +285,37 @@ source ./cloud-key/s3.key
 Как видно, никакого lock-файла нет. В локальной папке с проектом файл `.terraform.lock.hcl` присутствует.
 
 
+
 ### Задание 3
 
-Удаляем все ресурсы:
 ```bash
-terraform destroy -auto-approve
+# Создаём новую ветку terraform-hotfix:
+git checkout -b terraform-hotfix
+
+# Запушиваем её на GitHub
+git push -u origin terraform-hotfix
 ```
+
+Проверяем `tflint` и `checkov`, мы уже это делали в задании 1.
+
+Вносим необходимые изменения в проект, в основном это неиспользуемые переменные.
+
+![answer](./img/tf-05.3.5.png)
+
+Демаем commit и push.
+
+```bash
+git add .
+git commit -m "fix: исправление ошибок tflint и checkov"
+git push
+```
+
+Получившийся [PR](https://github.com/Arthur-Politiko/terraform-05-hw/pull/1#issue-3703960607)
+
+На самом деле, из-за того что был взят обрезанный вариант с 4-м заданием, мы получили крайне низкое количество ошибок
+
+### Задание 4
+
+Добавляем из задания variables, накидываем validate и на проверку. Вот такой результат получается:
+
+![answer](./img/tf-05.4.1.png)
